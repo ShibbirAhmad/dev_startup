@@ -7,7 +7,7 @@
           <img src="{{ asset('backend/dist/img/user2-160x160.jpg ') }}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Rasel Ahmed</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -37,8 +37,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-plus"></i> Add</a></li>
-            <li class="active"><a href="index.html"><i class="fa fa-eye"></i>Menage</a></li>
+            <li><router-link :to=" { name : 'add_category' }" ><i class="fa fa-plus"></i> Add</router-link></li>
+            <li class="active"><router-link :to="{ name : 'category' }"><i class="fa fa-eye"></i>Menage</router-link></li>
           </ul>
         </li>
 

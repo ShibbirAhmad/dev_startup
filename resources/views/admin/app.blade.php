@@ -14,7 +14,7 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div id="app" class="wrapper">
-
+   @include('admin.partials.navbar')
    @include('admin.partials.sidebar')
 
        <router-view> </router-view>
