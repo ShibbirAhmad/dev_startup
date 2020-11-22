@@ -9,4 +9,9 @@
 
 <!-- AdminLTE App -->
 <script src="{{ asset('backend/dist/js/adminlte.min.js') }} "></script>
+
+<script  src="{{ asset('backend/js/objectToFormData.js') }}"> </script>
+
+<script src="{{ asset('backend/js/sweetalert2.all.js') }}"> </script>
+
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->

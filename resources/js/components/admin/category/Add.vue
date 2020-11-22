@@ -92,6 +92,7 @@ export default {
   },
   methods: {
     addCategory() {
+       this.$Progress.start()
       this.form
         .post("/api/add/category", {
           // Transform form data to FormData
@@ -104,7 +105,15 @@ export default {
         .then((resp) => {
           console.log(resp);
           if (resp.data.status == "OK") {
-              alert(resp.data.message);
+              this.$Progress.finish()
+              this.$toasted.show(resp.data.message,{
+                type:'success',
+                position:'top-center',
+                duration:3000,
+              });
+              this.$router.push({ name : 'category'});
+          }else{
+             this.$Progress.fail()
           }
         });
     },
