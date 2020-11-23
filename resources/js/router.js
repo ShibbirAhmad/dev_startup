@@ -4,6 +4,10 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 import AdminDashboard from "./components/admin/Dashboard" ;
+
+import AdminLogin from "./components/admin/Login" ;
+import AdminRegister from "./components/admin/Register" ;
+
 import Category from "./components/admin/category/Index" ;
 import AddCategory from "./components/admin/category/Add" ;
 import EditCategory from "./components/admin/category/Edit" ;
@@ -17,6 +21,20 @@ const routes = [
     component: Foo,
     name: 'home'
    },
+    { 
+    path: '/backend/category/admin/login', 
+    component: AdminLogin,
+    name : 'admin_login',
+    meta: {  title:'Admin Login' } 
+    },
+
+    { 
+    path: '/backend/category/admin/Register', 
+    component: AdminRegister,
+    name : 'admin_register',
+    meta: {  title:'Admin Register' } 
+    },
+
   { 
     path: '/backend/admin/dashboard', 
     component: AdminDashboard,

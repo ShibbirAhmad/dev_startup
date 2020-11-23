@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
- Route::group([ 'namespace' => 'Admin',  ],function(){
+ Route::group([ 'namespace' => 'Admin',   ],function(){
 
      Route::get('api/get/category/list','CategoryController@get_category_list');
      Route::post('api/add/category','CategoryController@add_category');
