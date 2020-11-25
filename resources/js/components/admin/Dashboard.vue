@@ -1,5 +1,6 @@
 <template>
   <div>
+    <navbar> </navbar>
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
@@ -96,7 +97,9 @@
 <script>
 export default {
     
-     
+    created(){
+       
+    }
 }
 </script>
 

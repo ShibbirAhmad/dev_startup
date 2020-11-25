@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use Closure;
 
@@ -22,7 +23,10 @@ class AdminMiddleware
             } else {
                 return response('Unauthorized.', 401);
             }
+        }else{
+
+             return $next($request);
         }
-           return $next($request);
+           
     }
 }

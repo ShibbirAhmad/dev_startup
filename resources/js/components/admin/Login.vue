@@ -86,7 +86,7 @@ export default {
     adminLogin() {
        this.$Progress.start()
       this.form
-        .post("/api/add/category", {
+        .post("/api/backend/category/admin/login", {
           // Transform form data to FormData
           transformRequest: [
             function (data, headers) {
@@ -96,16 +96,19 @@ export default {
         })
         .then((resp) => {
           console.log(resp);
-          if (resp.data.status == "OK") {
+          if (resp.data.status == "SUCCESS") {
               this.$Progress.finish()
               this.$toasted.show(resp.data.message,{
                 type:'success',
                 position:'top-center',
                 duration:3000,
               });
-              this.$router.push({ email : 'category'});
+              localStorage.setItem("admin_token", resp.data.token);
+              this.$store.commit("admin", resp.data.admin);
+              this.$router.push({ name : 'admin_dashboard'});
+              location.reload();
           }else{
-             this.$Progress.fail()
+             this.$Progress.fail() ;
           }
         });
     },

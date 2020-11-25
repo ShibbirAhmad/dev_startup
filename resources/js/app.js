@@ -13,6 +13,7 @@ import Toasted from 'vue-toasted';
 Vue.use(Toasted)
 // you can also pass options, check options reference below
 Vue.use(Toasted)
+Vue.component('navbar',require('./components/admin/Navbar.vue').default)
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('pagination', require('laravel-vue-pagination'));
 

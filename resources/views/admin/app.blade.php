@@ -129,18 +129,19 @@ li.dropdown a:hover {
 </head>
 <body class="hold-transition skin-blue sidebar-mini" >
 <div id="app" class="wrapper">
-   @auth
-        @include('admin.partials.navbar')
-   @include('admin.partials.sidebar')
-   @endauth
-  
+   @if (Session::has('admin'))
+    
+       @include('admin.partials.sidebar')
+   
+   @endif
+   
 
        <router-view> </router-view>
        <vue-progress-bar></vue-progress-bar>
-@auth
-        @include('admin.partials.footer')
-
-@endauth
+  @if (Session::has('admin'))
+       @include('admin.partials.footer')
+  @endif
+       
 
   <div class="{{ asset('control-sidebar-bg') }}"></div>
 </div>
