@@ -27,8 +27,19 @@
         <li class="header">MAIN NAVIGATION</li>
 
          <li class="active treeview"><a href=""> <i class="fa fa-dashboard"></i> Dashboard</a></li>
-
-
+                  <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user-secret"></i> <span>Admin</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><router-link :to=" { name : 'add_admin' }" ><i class="fa fa-plus"></i> Add</router-link></li>
+            <li class="active"><router-link :to="{ name : 'admin_list' }"><i class="fa fa-eye"></i>Menage</router-link></li>
+          </ul>
+        </li>
+        
         <li class="treeview">
           <a href="#">
             <i class="fa fa-circle-o"></i> <span>Category</span>
@@ -41,7 +52,6 @@
             <li class="active"><router-link :to="{ name : 'category' }"><i class="fa fa-eye"></i>Menage</router-link></li>
           </ul>
         </li>
-
 
       </ul>
     </section>

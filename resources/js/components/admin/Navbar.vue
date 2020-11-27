@@ -15,10 +15,10 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img
+              <img v-if="getAdmin.image"
                 :src="base_url+ getAdmin.image"
                 class="user-image"
-                v-if="getAdmin.image"
+                
               />
               <img
                 :src="this.base_url+'images/no_image.jpg'"
@@ -43,7 +43,7 @@
 
                 <p>
                   {{ getAdmin.name }} - admin
-                  <small>Member since Nov. 2012</small>
+                  <small>Member since {{ getAdmin.created_at }}</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -57,7 +57,7 @@
                      <div class="col-md-3">
                         <div >
                   <router-link
-                    :to="{ name: 'adminProfile' }"
+                    :to="{ name: 'admin_profile' }"
                    style="color:#000 !important;"
                     class="btn btn-default btn-flat"
                     >Profile</router-link
@@ -68,7 +68,7 @@
                      <div class="col-md-6">
                            <div class="passowrdChange">
                        <router-link  style="color:#000 !important;"
-                    class="btn btn-default btn-flat" :to="{name : 'edit_category', params:{id : getAdmin.id }}" >change password</router-link>
+                    class="btn btn-default btn-flat" :to="{ name : 'edit_admin_password' } " >change password</router-link>
                             </div>
                      </div>
 
